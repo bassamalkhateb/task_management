@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:task_management/Screen/add_task.dart';
 import 'package:task_management/Screen/all_task_screen.dart';
 import 'package:task_management/Screen/home_screen.dart';
@@ -13,14 +14,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
       ),
-      home: AllTaskScreen(),
+      home: HomeScreen(),
     );
   }
 }

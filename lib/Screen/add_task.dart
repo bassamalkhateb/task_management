@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:task_management/utiles/colors.dart';
 import 'package:task_management/widgets/bottonWidget.dart';
 
@@ -16,7 +18,7 @@ class AddTask extends StatelessWidget {
       body: Container(
         width: double.maxFinite,
         height: double.maxFinite,
-        padding: const EdgeInsets.only(left: 20, right: 20),
+        padding: const EdgeInsets.only(left: 10, right: 20),
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
@@ -30,10 +32,12 @@ class AddTask extends StatelessWidget {
             Column(
               children: [
                 SizedBox(
-                  height: 60,
+                  height: 40,
                 ),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.back();
+                    },
                     icon: Icon(
                       Icons.arrow_back,
                       color: AppColors.mainColor,

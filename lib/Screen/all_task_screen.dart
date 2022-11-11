@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:task_management/Screen/home_screen.dart';
 import 'package:task_management/utiles/colors.dart';
 import 'package:task_management/widgets/bottonWidget.dart';
 import 'package:task_management/widgets/task_widget.dart';
@@ -34,9 +36,14 @@ class AllTaskScreen extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(left: 20, top: 60),
             alignment: Alignment.topLeft,
-            child: Icon(
-              Icons.arrow_back,
-              color: AppColors.mainColor,
+            child: InkWell(
+              onTap: (){
+                Get.to(()=>HomeScreen(),transition: Transition.fade,duration: Duration(seconds: 1));
+              },
+              child: Icon(
+                Icons.arrow_back,
+                color: AppColors.mainColor,
+              ),
             ),
             width: double.maxFinite,
             height: MediaQuery.of(context).size.height / 3.2,
