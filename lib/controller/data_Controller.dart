@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:get/get.dart';
 import 'package:task_management/services/services.dart';
 
@@ -17,12 +15,12 @@ class DataController extends GetxController {
     Response response = await service.getData();
 
     if (response.statusCode == 200) {
-      _myData = jsonDecode(response.body);
+      _myData = response.body;
       print("basssssssssssam 1");
       update();
     } else {
       print("basssssssssssam 2");
     }
-
+    print(_myData);
   }
 }
