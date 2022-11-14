@@ -8,7 +8,7 @@ class DataController extends GetxController {
   bool get isLoading => _isLoading;
   List<dynamic> _myData = [];
 
-  List<dynamic> get myData => _myData;
+  List<dynamic> get myData =>_myData;
 
   Future<void> getData() async {
     _isLoading = true;
