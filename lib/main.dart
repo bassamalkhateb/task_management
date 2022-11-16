@@ -4,6 +4,7 @@ import 'package:task_management/Screen/add_task.dart';
 import 'package:task_management/Screen/all_task_screen.dart';
 import 'package:task_management/controller/data_Controller.dart';
 import 'package:task_management/Screen/home_screen.dart';
+import 'package:task_management/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      initialRoute: RoutesClass.getHomeRoute(),
+      getPages: RoutesClass.routes ,
     );
   }
 }

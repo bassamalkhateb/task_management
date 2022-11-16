@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_management/Screen/add_task.dart';
+import 'package:task_management/routes/routes.dart';
 import 'package:task_management/utiles/colors.dart';
 import 'package:task_management/widgets/bottonWidget.dart';
 
@@ -53,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: MediaQuery.of(context).size.height/2.2   ,),
             InkWell(
               onTap: (){
-                Get.to(()=>AddTask(),transition: Transition.zoom,duration: Duration(milliseconds: 500));
+                Get.toNamed(RoutesClass.getAddTakRoute());
 
               },
               child: BottonWidget(
@@ -64,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 15,),
             InkWell(
               onTap: (){
-                Get.to(()=>AllTaskScreen(),transition: Transition.fade,duration: Duration(seconds: 2));
+                Get.toNamed(RoutesClass.getAllTakRoute());
               },
               child: BottonWidget(
                   text: 'View All',

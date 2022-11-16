@@ -1,9 +1,11 @@
 class AppConstants{
-  static const String APP_NAME='DBFood';
-  static const double APP_VERSION= 1;
-    static const String BASE_URL ="https://mvs.bslmeiyu.com";
-  static const String POPULAR_URL="/api/v1/products/popular";
-  static const String RECOMMEND_PRODEUCT_URL="/api/v1/products/recommened";
-  static const String TOKEN = "DBtoken";
+  //static const String APP_NAME='DBFood';
+  //static const double APP_VERSION= 1;
+  static const String BASE_URL ="https://127.0.0..1:8082";
+  static const String GET_URL="/gettasks";
+  static const String CREATE_URL="/create";
+  static const String GET_TASK= "/gettask";
+  static const String UPDATE_TASK= "/update/";
+  static const String DELETE_TASK= "/delete/";
 
 }
