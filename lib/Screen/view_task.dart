@@ -58,7 +58,7 @@ class ViewTask extends StatelessWidget {
                  children: [
                    TextFieldWidget(
                        textController: nameController,
-                       hintText: "Task name",readOnly: true,),
+                       hintText: 'Task name',readOnly: true,),
                    SizedBox(
                      height: 15,
                    ),

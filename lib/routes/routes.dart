@@ -18,8 +18,8 @@ class RoutesClass {
   static String getHomeRoute()=>home;
   static String getAllTakRoute()=>allTask;
   static String getAddTakRoute()=>addTask;
-  static String getEditTakRoute(String id )=>editTask;
-  static String getViewTakRoute(String id )=>viewTask;
+  static String getEditTakRoute(String id )=>'$editTask?id=$id';
+  static String getViewTakRoute(String id )=>'$viewTask?id=$id';
 
   static List<GetPage> routes =[
       GetPage(name: home, page: ()=>const HomeScreen()),

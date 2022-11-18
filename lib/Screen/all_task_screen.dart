@@ -22,7 +22,10 @@ class AllTaskScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     print(Get.find<DataController>().myData.length);
     _loadData();
-    List myData = ['Try Harder', 'Try Smarter'];
+    List myData = [
+      'Try Harder',
+      'Try Smarter',
+    ];
     final leftEditIcon = Container(
       margin: EdgeInsets.only(bottom: 10),
       color: Color(0xff2e3253).withOpacity(0.5),
@@ -194,14 +197,14 @@ class AllTaskScreen extends StatelessWidget {
                                       return false;
                                     } else {
                                       controller.deleteData(int.parse(
-                                          controller.singleData["id"]));
+                                          controller.myData[index]["id"]));
                                       return Future.delayed(
-                                          Duration(seconds: 1),
-                                          ()async{
-                                            await controller.getData();
+                                          Duration(seconds: 1), () async {
+                                        await controller.getData();
 
-                                             return direction == DismissDirection.endToStart;
-                                          });
+                                        return direction ==
+                                            DismissDirection.endToStart;
+                                      });
                                     }
                                   },
                                   key: ObjectKey(index),
@@ -210,8 +213,7 @@ class AllTaskScreen extends StatelessWidget {
                                         left: 20, right: 20, bottom: 10),
                                     child: Container(
                                       child: TaskWidget(
-                                        text: controller.myData[index]
-                                            ["task name"],
+                                        text: controller.myData[index]["task_name"],
                                         color: Colors.blueGrey,
                                       ),
                                     ),

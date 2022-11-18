@@ -1,10 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:task_management/services/services.dart';
 import 'package:task_management/utiles/app_constants.dart';
 
 class DataController extends GetxController {
-  DataServicce service = DataServicce();
+  DataService service = DataService();
   bool _isLoading = false;
 
   bool get isLoading => _isLoading;
@@ -16,13 +18,15 @@ class DataController extends GetxController {
 
   Future<void> getData() async {
     _isLoading = true;
-    Response response = await service.getData(AppConstants.GET_URL);
 
+    Response response = await service.getData("${AppConstants.GET_URL}");
+    print(response.body);
     if (response.statusCode == 200) {
-      _myData = response.body;
+      _myData = json.decode(response.body);
       print("basssssssssssam 1");
 
     } else {
+
       print("basssssssssssam 2");
     }
     _isLoading = false;
@@ -35,7 +39,7 @@ class DataController extends GetxController {
     if (response.statusCode == 200) {
       // _myData = response.body;
       if(kDebugMode){
-        print("basssssssssssam new task");
+
         _singleData=response.body;
       }
 
@@ -89,7 +93,7 @@ class DataController extends GetxController {
     }else{
       print("basssssssssssam ");
     }
-    Future.delayed(Duration(seconds: 1),
+   await Future.delayed(Duration(seconds: 1),
             (){
           _isLoading=false;
           update();
